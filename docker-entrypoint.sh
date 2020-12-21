@@ -31,10 +31,10 @@ if [ "$1" = 'exim' ]; then
 	set -- tini -- "$@"
 fi
 
-chown root:Debian-exim /opt/ssl/localhost.key
-chown root:Debian-exim /opt/ssl/localhost.crt
-chmod 640 /opt/ssl/localhost.key
-chmod 640 /opt/ssl/localhost.crt
+chown root:Debian-exim /opt/ssl/localhost-key.pem
+chown root:Debian-exim /opt/ssl/localhost.pem
+chmod 640 /opt/ssl/localhost-key.pem
+chmod 640 /opt/ssl/localhost.pem
 
 
 exec "$@"

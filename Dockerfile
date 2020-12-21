@@ -22,8 +22,8 @@ RUN echo "REQUIRE_PROTOCOL = smtps">> /etc/exim4/exim4.conf.localmacros
 RUN echo "MAIN_HARDCODE_PRIMARY_HOSTNAME = localhost" >> /etc/exim4/exim4.conf.localmacros
 #TLS
 RUN echo "MAIN_TLS_ENABLE = 1">> /etc/exim4/exim4.conf.localmacros
-RUN echo "MAIN_TLS_CERTIFICATE=/opt/ssl/localhost.crt" >> /etc/exim4/exim4.conf.localmacros
-RUN echo "MAIN_TLS_PRIVATEKEY=/opt/ssl/localhost.key" >> /etc/exim4/exim4.conf.localmacros
+RUN echo "MAIN_TLS_CERTIFICATE=/opt/ssl/localhost.pem" >> /etc/exim4/exim4.conf.localmacros
+RUN echo "MAIN_TLS_PRIVATEKEY=/opt/ssl/localhost-key.pem" >> /etc/exim4/exim4.conf.localmacros
 RUN echo "daemon_smtp_ports = 25 : 465" >> etc/exim4/exim4.conf.localmacros
 RUN echo "tls_on_connect_ports = 465" >> /etc/exim4/exim4.conf.localmacros
 
