@@ -1,3 +1,7 @@
+# Fork
+This repository is forked from https://github.com/tianon/dockerfiles/tree/master/exim4
+Made some changes to enable SMTP via implicit TLS on port 465. 
+
 # How To Use
 
 You probably want to bind-mount in some kind of `/etc/mailname` that actually makes sense.  Probably also worth setting `-h` to the same value.  Something like `-v /etc/mailname:/etc/mailname:ro -h "$(cat /etc/mailname)"` might be reasonable.
