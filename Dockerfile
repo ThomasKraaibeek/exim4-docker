@@ -24,7 +24,7 @@ RUN echo "MAIN_HARDCODE_PRIMARY_HOSTNAME = localhost" >> /etc/exim4/exim4.conf.l
 RUN echo "MAIN_TLS_ENABLE = 1">> /etc/exim4/exim4.conf.localmacros
 RUN echo "MAIN_TLS_CERTIFICATE=/opt/ssl/localhost.pem" >> /etc/exim4/exim4.conf.localmacros
 RUN echo "MAIN_TLS_PRIVATEKEY=/opt/ssl/localhost-key.pem" >> /etc/exim4/exim4.conf.localmacros
-RUN echo "daemon_smtp_ports = 25 : 465" >> etc/exim4/exim4.conf.localmacros
+RUN echo "daemon_smtp_ports = 25 : 587 : 465" >> etc/exim4/exim4.conf.localmacros
 RUN echo "tls_on_connect_ports = 465" >> /etc/exim4/exim4.conf.localmacros
 
 RUN echo "dc_other_hostnames='localhost'" >> /etc/exim4/update-exim4.conf.conf
