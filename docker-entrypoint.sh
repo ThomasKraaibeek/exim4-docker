@@ -1,6 +1,11 @@
 #!/bin/bash
 set -e
 
+chown root:Debian-exim /opt/ssl/localhost-key.pem
+chown root:Debian-exim /opt/ssl/localhost.pem
+chmod 640 /opt/ssl/localhost-key.pem
+chmod 640 /opt/ssl/localhost.pem
+
 if [ "$1" = 'exim' ]; then
 	opts=(
 		dc_local_interfaces '0.0.0.0 ; ::0'
@@ -31,10 +36,6 @@ if [ "$1" = 'exim' ]; then
 	set -- tini -- "$@"
 fi
 
-chown root:Debian-exim /opt/ssl/localhost-key.pem
-chown root:Debian-exim /opt/ssl/localhost.pem
-chmod 640 /opt/ssl/localhost-key.pem
-chmod 640 /opt/ssl/localhost.pem
 
 
 exec "$@"
